@@ -10,18 +10,37 @@ Na płytce znajduje się 6 filtrów aktywnych drugiego rzędu (2nd order) oparty
 
 
 
-Struktura układu obejmuje:
-* **Bufory wejściowe (Wtórniki):** Zapewniają wysoką impedancję wejściową i separację sygnału.
-* **Filtry Dolnoprzepustowe (Low-Pass):** Trzy układy o różnych współczynnikach dobroci:
-    * $Q = 0.5$
-    * $Q = 0.707$ (Butterworth)
-    * $Q = 2.0$
-* **Filtry Górnoprzepustowe (High-Pass):** Trzy układy o analogicznych wartościach dobroci:
-    * $Q = 0.5$ / $Q = 0.707$ / $Q = 2.0$
+### 1. Sekcja Filtrów (Topologia Sallen-Key)
+Na płytce znajduje się 6 filtrów aktywnych drugiego rzędu (2nd order). Wykorzystanie różnych wartości dobroci ($Q$) pozwala na demonstrację trzech klasycznych aproksymacji:
 
-Wybór konkretnego filtra odbywa się za pomocą zintegrowanych zworek (selekcja wyjścia).
+* **Bufory wejściowe (Wtórniki):** Zapewniają wysoką impedancję wejściową, eliminując wpływ impedancji źródła na parametry filtracji.
+* **Filtry Dolnoprzepustowe (LPF) i Górnoprzepustowe (HPF):**
+    * **$Q = 0.5$ (Bessel / Overdamped):** Filtr o najlepszej odpowiedzi impulsowej (brak przeregulowań) i liniowej fazie. Idealny do sygnałów prostokątnych i impulsowych.
+    * **$Q = 0.707$ (Butterworth):** Filtr o maksymalnie płaskiej charakterystyce amplitudowej w paśmie przepustowym. Stanowi kompromis między szybkością opadania a odpowiedzią czasową.
+    * **$Q = 2.0$ (Czebyszew / Chebyshev):** Filtr o bardzo stromym zboczu opadania, ale kosztem pojawienia się pofalowań (ripple) i wzmocnienia w okolicy częstotliwości odcięcia.
 
-### 2. Sekcja Zasilania (Power Supply)
+
+
+Wybór konkretnej charakterystyki odbywa się poprzez przepięcie zworki na selektorze wyjściowym, co pozwala na natychmiastowe porównanie różnic w sygnale na oscyloskopie lub w programie LabVIEW.
+
+
+### 2. Sekcja Filtrów Górnoprzepustowych (High-Pass)
+Sekcja ta służy do tłumienia składowych o niskich częstotliwościach i przepuszczania sygnałów powyżej częstotliwości odcięcia ($f_c$). Zastosowano topologię Sallen-Key 2. rzędu, co pozwala na demonstrację wpływu dobroci ($Q$) na kształt "kolana" charakterystyki:
+
+* **$Q = 0.5$ (Bessel - HPF):** * Charakteryzuje się bardzo łagodnym wejściem w pasmo przepustowe.
+    * Brak przeregulowań w odpowiedzi jednostkowej – idealny do analizy szybkich stanów nieustalonych.
+* **$Q = 0.707$ (Butterworth - HPF):** * Najbardziej płaska charakterystyka w paśmie przepustowym (Flat-Response).
+    * Sygnał powyżej $f_c$ nie posiada pofalowań, co czyni go najbardziej przewidywalnym w pomiarach laboratoryjnych.
+* **$Q = 2.0$ (Czebyszew - HPF):** * Posiada wyraźne podbicie (peak) w okolicy częstotliwości odcięcia.
+    * Zapewnia najszybszy wzrost tłumienia dla sygnałów poniżej $f_c$, ale wprowadza zniekształcenia fazowe i amplitudowe w pobliżu punktu pracy.
+
+[Image of High-pass filter frequency response Bessel vs Butterworth vs Chebyshev]
+
+### Porównanie parametrów konstrukcyjnych (HPF)
+Wszystkie filtry oparte są na wzmacniaczu **OP07**, a różne typy odpowiedzi uzyskano poprzez precyzyjny dobór elementów biernych (zgodnie ze schematem):
+* Kondensatory wejściowe (np. $C_{17}$, $C_{18}$) o wartości $10nF$.
+* Rezystory ustalające dobroć (np. $R_{13} = 22k\Omega$, $R_{14} = 11k\Omega$).
+### 3. Sekcja Zasilania (Power Supply)
 Układ posiada zaawansowany blok zasilania, który umożliwia pracę z sygnałem zmiennym dzięki zasilaniu symetrycznemu:
 * **Przetwornica DC-DC:** Użycie modułu **MGJ2D051515SC** pozwala na uzyskanie izolowanego napięcia symetrycznego $\pm 5V$ (lub $\pm 15V$ zależnie od wersji) z pojedynczego wejścia 5V.
 * **Filtrowanie LC:** Zastosowanie dławika $L_1$ oraz kondensatorów $C_3$, $C_4$ minimalizuje tętnienia napięcia z przetwornicy impulsowej.
