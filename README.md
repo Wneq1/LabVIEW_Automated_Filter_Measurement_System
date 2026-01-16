@@ -1,5 +1,4 @@
 # LabVIEW_Automated_Filter_Measurement_System
-# LabVIEW Automated Filter Measurement System
 
 ## 📋 Opis projektu
 Projekt przedstawia system do zautomatyzowanego pomiaru charakterystyk częstotliwościowych filtrów aktywnych. Sercem układu jest autorska płytka PCB zaprojektowana w programie **KiCad**, zawierająca 6 różnych wariantów filtrów analogowych. System został stworzony z myślą o współpracy z aplikacją pomiarową w środowisku **LabVIEW**, co pozwala na automatyczne wykreślanie wykresów Bodego.
