@@ -6,11 +6,6 @@ Projekt przedstawia system do zautomatyzowanego pomiaru charakterystyk częstotl
 ## 🛠️ Architektura Sprzętowa (Hardware)
 
 ### 1. Sekcja Filtrów (Topologia Sallen-Key)
-Na płytce znajduje się 6 filtrów aktywnych drugiego rzędu (2nd order) opartych na precyzyjnych wzmacniaczach operacyjnych **OP07**. 
-
-
-
-### 1. Sekcja Filtrów (Topologia Sallen-Key)
 Na płytce znajduje się 6 filtrów aktywnych drugiego rzędu (2nd order). Wykorzystanie różnych wartości dobroci ($Q$) pozwala na demonstrację trzech klasycznych aproksymacji:
 
 * **Bufory wejściowe (Wtórniki):** Zapewniają wysoką impedancję wejściową, eliminując wpływ impedancji źródła na parametry filtracji.
