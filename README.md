@@ -15,9 +15,9 @@ Na płytce znajduje się 6 filtrów aktywnych drugiego rzędu (2nd order). Wykor
 
 * **Bufory wejściowe (Wtórniki):** Zapewniają wysoką impedancję wejściową, eliminując wpływ impedancji źródła na parametry filtracji.
 * **Filtry Dolnoprzepustowe (LPF) i Górnoprzepustowe (HPF):**
-    * **$Q = 0.5$ (Bessel / Overdamped):** Filtr o najlepszej odpowiedzi impulsowej (brak przeregulowań) i liniowej fazie. Idealny do sygnałów prostokątnych i impulsowych.
+    * **$Q = 0.5$ (Bessel):** Filtr o najlepszej odpowiedzi impulsowej (brak przeregulowań) i liniowej fazie. Idealny do sygnałów prostokątnych i impulsowych.
     * **$Q = 0.707$ (Butterworth):** Filtr o maksymalnie płaskiej charakterystyce amplitudowej w paśmie przepustowym. Stanowi kompromis między szybkością opadania a odpowiedzią czasową.
-    * **$Q = 2.0$ (Czebyszew / Chebyshev):** Filtr o bardzo stromym zboczu opadania, ale kosztem pojawienia się pofalowań (ripple) i wzmocnienia w okolicy częstotliwości odcięcia.
+    * **$Q = 2.0$ (Czebyszew):** Filtr o bardzo stromym zboczu opadania, ale kosztem pojawienia się pofalowań (ripple) i wzmocnienia w okolicy częstotliwości odcięcia.
 
 
 
@@ -27,11 +27,11 @@ Wybór konkretnej charakterystyki odbywa się poprzez przepięcie zworki na sele
 ### 2. Sekcja Filtrów Górnoprzepustowych (High-Pass)
 Sekcja ta służy do tłumienia składowych o niskich częstotliwościach i przepuszczania sygnałów powyżej częstotliwości odcięcia ($f_c$). Zastosowano topologię Sallen-Key 2. rzędu, co pozwala na demonstrację wpływu dobroci ($Q$) na kształt "kolana" charakterystyki:
 
-* **$Q = 0.5$ (Bessel - HPF):** * Charakteryzuje się bardzo łagodnym wejściem w pasmo przepustowe.
+* **$Q = 0.5$ (Bessel ):** * Charakteryzuje się bardzo łagodnym wejściem w pasmo przepustowe.
     * Brak przeregulowań w odpowiedzi jednostkowej – idealny do analizy szybkich stanów nieustalonych.
-* **$Q = 0.707$ (Butterworth - HPF):** * Najbardziej płaska charakterystyka w paśmie przepustowym (Flat-Response).
+* **$Q = 0.707$ (Butterworth):** * Najbardziej płaska charakterystyka w paśmie przepustowym (Flat-Response).
     * Sygnał powyżej $f_c$ nie posiada pofalowań, co czyni go najbardziej przewidywalnym w pomiarach laboratoryjnych.
-* **$Q = 2.0$ (Czebyszew - HPF):** * Posiada wyraźne podbicie (peak) w okolicy częstotliwości odcięcia.
+* **$Q = 2.0$ (Czebyszew):** * Posiada wyraźne podbicie (peak) w okolicy częstotliwości odcięcia.
     * Zapewnia najszybszy wzrost tłumienia dla sygnałów poniżej $f_c$, ale wprowadza zniekształcenia fazowe i amplitudowe w pobliżu punktu pracy.
 
 [Image of High-pass filter frequency response Bessel vs Butterworth vs Chebyshev]
