@@ -28,6 +28,7 @@ Sekcja ta służy do tłumienia składowych o niskich częstotliwościach i prze
     * Sygnał powyżej $f_c$ nie posiada pofalowań, co czyni go najbardziej przewidywalnym w pomiarach laboratoryjnych.
 * **$Q = 2.0$ (Czebyszew):** * Posiada wyraźne podbicie (peak) w okolicy częstotliwości odcięcia.
     * Zapewnia najszybszy wzrost tłumienia dla sygnałów poniżej $f_c$, ale wprowadza zniekształcenia fazowe i amplitudowe w pobliżu punktu pracy.
+    * 
 <img width="900" height="798" alt="image" src="https://github.com/user-attachments/assets/3ded94e1-a627-43d8-a1bc-855a529c00fa" />
 
 ### Porównanie parametrów konstrukcyjnych (HPF)
@@ -39,10 +40,12 @@ Układ posiada zaawansowany blok zasilania, który umożliwia pracę z sygnałem
 * **Przetwornica DC-DC:** Użycie modułu **MGJ2D051515SC** pozwala na uzyskanie izolowanego napięcia symetrycznego $\pm 5V$ (lub $\pm 15V$ zależnie od wersji) z pojedynczego wejścia 5V.
 * **Filtrowanie LC:** Zastosowanie dławika $L_1$ oraz kondensatorów $C_3$, $C_4$ minimalizuje tętnienia napięcia z przetwornicy impulsowej.
 * **Zabezpieczenia:** Dioda chroniąca przed odwrotną polaryzacją oraz diody LED sygnalizujące obecność napięcia na szynach dodatniej i ujemnej.
+* 
 <img width="945" height="292" alt="image" src="https://github.com/user-attachments/assets/316ca8f9-eb68-4fde-949f-09c96520dae3" />
 
 
 ### 4. Schemat całego układu
+
 <img width="1073" height="729" alt="image" src="https://github.com/user-attachments/assets/f32f13ef-76d7-4820-bcf1-dcaea04c1c58" />
 
 
@@ -56,6 +59,7 @@ Dzięki narzędziom programu KiCad, wygenerowano realistyczny model 3D płytki *
 * **Layout:** Komponenty zostały rozmieszczone blokowo, co ułatwia diagnostykę sygnału od wejścia (Input) do wyjścia (Output).
 * **Oznaczenia:** Na warstwie opisowej (silkscreen) umieszczono logotypy Politechniki Rzeszowskiej oraz KMiSD, a także czytelne etykiety dla zworek selekcyjnych dobroci $Q$.
 * **Montaż:** Wykorzystano mieszaną technologię montażu (SMT dla układów scalonych i rezystorów, THT dla kondensatorów i złączy), co zapewnia kompromis między miniaturyzacją a łatwością modyfikacji.
+  
 <img width="1010" height="700" alt="image" src="https://github.com/user-attachments/assets/1a221ec9-fb6e-46f1-bde8-7535b701d71a" />
 
 ### 2. Widok Warstwy Górnej (Top Layer)
@@ -63,12 +67,16 @@ Warstwa górna odpowiada głównie za prowadzenie sygnałów o wysokiej impedanc
 * **Separacja Sygnałów:** Ścieżki sygnałowe są prowadzone w sposób możliwie najkrótszy, aby uniknąć zbierania zakłóceń elektromagnetycznych (EMI).
 * **Blok Zasilania:** Wyraźnie wydzielona sekcja z przetwornicą **MGJ2D051515SC** i filtrem LC, która zasila całą płytkę napięciem symetrycznym $\pm 5V$.
 * **Pola Masowe:** Wolne przestrzenie zostały wypełnione wylewką masy (Ground Plane), co poprawia stabilność pracy filtrów o wysokiej dobroci $Q=2.0$.
+  
 <img width="375" height="754" alt="image" src="https://github.com/user-attachments/assets/34ce44f3-3409-4d47-b7bc-0c71e3d9f2ba" />
+
 ### 3. Widok Warstwy Dolnej (Bottom Layer)
 Warstwa dolna pełni kluczową rolę w zapewnieniu integralności sygnałowej:
 * **Ekranowanie:** Ciągła płaszczyzna masy na dolnej warstwie minimalizuje pętle masy i redukuje szumy przenoszone z sekcji zasilania impulsowego do czułych sekcji filtrów analogowych.
 * **Przelotki (Vias):** Strategicznie rozmieszczone przelotki zapewniają niską impedancję połączeń między warstwami zasilania.
+  
 <img width="866" height="806" alt="image" src="https://github.com/user-attachments/assets/e82039ec-ea89-4bfd-a65b-c1c9f220117f" />
+
 ## 💻 Integracja z LabVIEW
 Projekt został zaprojektowany pod kątem automatyzacji. Program w LabVIEW realizuje:
 1.  Sterowanie generatorem sygnałowym (częstotliwość sweep).
