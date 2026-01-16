@@ -22,10 +22,10 @@ Wybór konkretnej charakterystyki odbywa się poprzez przepięcie zworki na sele
 ### 2. Sekcja Filtrów Górnoprzepustowych (High-Pass)
 Sekcja ta służy do tłumienia składowych o niskich częstotliwościach i przepuszczania sygnałów powyżej częstotliwości odcięcia ($f_c$). Zastosowano topologię Sallen-Key 2. rzędu, co pozwala na demonstrację wpływu dobroci ($Q$) na kształt "kolana" charakterystyki:
 
-* **$Q = 0.5$ (Bessel ):** 
-* **$Q = 0.707$ (Butterworth):**
-* **$Q = 2.0$ (Czebyszew):** 
-    * 
+* **$Q = 0.5$ (Bessel )** 
+* **$Q = 0.707$ (Butterworth)**
+* **$Q = 2.0$ (Czebyszew)** 
+     
 <img width="900" height="798" alt="image" src="https://github.com/user-attachments/assets/3ded94e1-a627-43d8-a1bc-855a529c00fa" />
 
 ### Porównanie parametrów konstrukcyjnych (HPF)
