@@ -78,7 +78,7 @@ Warstwa dolna pełni kluczową rolę w zapewnieniu integralności sygnałowej:
 <img width="866" height="806" alt="image" src="https://github.com/user-attachments/assets/e82039ec-ea89-4bfd-a65b-c1c9f220117f" />
 
 ## 💻 Integracja z LabVIEW
-Projekt został zaprojektowany pod kątem automatyzacji. Program w LabVIEW realizuje:
+W przyszłości projekt zostanie rozbudowy o automatyzacjie. Program w LabVIEW będzie obejmował:
 1.  Sterowanie generatorem sygnałowym (częstotliwość sweep).
 2.  Akwizycję danych przez kartę DAQ lub oscyloskop.
 3.  Przetwarzanie danych i wizualizację charakterystyki amplitudowo-częstotliwościowej w czasie rzeczywistym.
