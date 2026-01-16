@@ -14,7 +14,7 @@ Na płytce znajduje się 6 filtrów aktywnych drugiego rzędu (2nd order). Wykor
     * **$Q = 0.707$ (Butterworth):** Filtr o maksymalnie płaskiej charakterystyce amplitudowej w paśmie przepustowym. Stanowi kompromis między szybkością opadania a odpowiedzią czasową.
     * **$Q = 2.0$ (Czebyszew):** Filtr o bardzo stromym zboczu opadania, ale kosztem pojawienia się pofalowań (ripple) i wzmocnienia w okolicy częstotliwości odcięcia.
 
-
+<img width="840" height="780" alt="image" src="https://github.com/user-attachments/assets/fb7ec75d-9701-4431-a5f4-34ac9d3ae39a" />
 
 Wybór konkretnej charakterystyki odbywa się poprzez przepięcie zworki na selektorze wyjściowym, co pozwala na natychmiastowe porównanie różnic w sygnale na oscyloskopie lub w programie LabVIEW.
 
@@ -28,8 +28,7 @@ Sekcja ta służy do tłumienia składowych o niskich częstotliwościach i prze
     * Sygnał powyżej $f_c$ nie posiada pofalowań, co czyni go najbardziej przewidywalnym w pomiarach laboratoryjnych.
 * **$Q = 2.0$ (Czebyszew):** * Posiada wyraźne podbicie (peak) w okolicy częstotliwości odcięcia.
     * Zapewnia najszybszy wzrost tłumienia dla sygnałów poniżej $f_c$, ale wprowadza zniekształcenia fazowe i amplitudowe w pobliżu punktu pracy.
-
-[Image of High-pass filter frequency response Bessel vs Butterworth vs Chebyshev]
+<img width="900" height="798" alt="image" src="https://github.com/user-attachments/assets/3ded94e1-a627-43d8-a1bc-855a529c00fa" />
 
 ### Porównanie parametrów konstrukcyjnych (HPF)
 Wszystkie filtry oparte są na wzmacniaczu **OP07**, a różne typy odpowiedzi uzyskano poprzez precyzyjny dobór elementów biernych (zgodnie ze schematem):
@@ -40,7 +39,7 @@ Układ posiada zaawansowany blok zasilania, który umożliwia pracę z sygnałem
 * **Przetwornica DC-DC:** Użycie modułu **MGJ2D051515SC** pozwala na uzyskanie izolowanego napięcia symetrycznego $\pm 5V$ (lub $\pm 15V$ zależnie od wersji) z pojedynczego wejścia 5V.
 * **Filtrowanie LC:** Zastosowanie dławika $L_1$ oraz kondensatorów $C_3$, $C_4$ minimalizuje tętnienia napięcia z przetwornicy impulsowej.
 * **Zabezpieczenia:** Dioda chroniąca przed odwrotną polaryzacją oraz diody LED sygnalizujące obecność napięcia na szynach dodatniej i ujemnej.
-
+<img width="945" height="292" alt="image" src="https://github.com/user-attachments/assets/316ca8f9-eb68-4fde-949f-09c96520dae3" />
 ## 💻 Integracja z LabVIEW
 Projekt został zaprojektowany pod kątem automatyzacji. Program w LabVIEW realizuje:
 1.  Sterowanie generatorem sygnałowym (częstotliwość sweep).
@@ -55,9 +54,9 @@ Projekt został zaprojektowany pod kątem automatyzacji. Program w LabVIEW reali
 ---
 *Projekt zrealizowany na Politechnice Rzeszowskiej (Katedra Metrologii i Systemów Diagnostycznych).*
 
-<img width="945" height="292" alt="image" src="https://github.com/user-attachments/assets/316ca8f9-eb68-4fde-949f-09c96520dae3" />
 
-<img width="840" height="780" alt="image" src="https://github.com/user-attachments/assets/fb7ec75d-9701-4431-a5f4-34ac9d3ae39a" />
+
+
 
 <img width="900" height="798" alt="image" src="https://github.com/user-attachments/assets/3ded94e1-a627-43d8-a1bc-855a529c00fa" />
 
