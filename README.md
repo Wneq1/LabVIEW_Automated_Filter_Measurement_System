@@ -1,5 +1,46 @@
 # LabVIEW_Automated_Filter_Measurement_System
-Project contain PCB designed with 6 types of filters and data aqusition program
+# LabVIEW Automated Filter Measurement System
+
+## 📋 Opis projektu
+Projekt przedstawia system do zautomatyzowanego pomiaru charakterystyk częstotliwościowych filtrów aktywnych. Sercem układu jest autorska płytka PCB zaprojektowana w programie **KiCad**, zawierająca 6 różnych wariantów filtrów analogowych. System został stworzony z myślą o współpracy z aplikacją pomiarową w środowisku **LabVIEW**, co pozwala na automatyczne wykreślanie wykresów Bodego.
+
+## 🛠️ Architektura Sprzętowa (Hardware)
+
+### 1. Sekcja Filtrów (Topologia Sallen-Key)
+Na płytce znajduje się 6 filtrów aktywnych drugiego rzędu (2nd order) opartych na precyzyjnych wzmacniaczach operacyjnych **OP07**. 
+
+
+
+Struktura układu obejmuje:
+* **Bufory wejściowe (Wtórniki):** Zapewniają wysoką impedancję wejściową i separację sygnału.
+* **Filtry Dolnoprzepustowe (Low-Pass):** Trzy układy o różnych współczynnikach dobroci:
+    * $Q = 0.5$
+    * $Q = 0.707$ (Butterworth)
+    * $Q = 2.0$
+* **Filtry Górnoprzepustowe (High-Pass):** Trzy układy o analogicznych wartościach dobroci:
+    * $Q = 0.5$ / $Q = 0.707$ / $Q = 2.0$
+
+Wybór konkretnego filtra odbywa się za pomocą zintegrowanych zworek (selekcja wyjścia).
+
+### 2. Sekcja Zasilania (Power Supply)
+Układ posiada zaawansowany blok zasilania, który umożliwia pracę z sygnałem zmiennym dzięki zasilaniu symetrycznemu:
+* **Przetwornica DC-DC:** Użycie modułu **MGJ2D051515SC** pozwala na uzyskanie izolowanego napięcia symetrycznego $\pm 5V$ (lub $\pm 15V$ zależnie od wersji) z pojedynczego wejścia 5V.
+* **Filtrowanie LC:** Zastosowanie dławika $L_1$ oraz kondensatorów $C_3$, $C_4$ minimalizuje tętnienia napięcia z przetwornicy impulsowej.
+* **Zabezpieczenia:** Dioda chroniąca przed odwrotną polaryzacją oraz diody LED sygnalizujące obecność napięcia na szynach dodatniej i ujemnej.
+
+## 💻 Integracja z LabVIEW
+Projekt został zaprojektowany pod kątem automatyzacji. Program w LabVIEW realizuje:
+1.  Sterowanie generatorem sygnałowym (częstotliwość sweep).
+2.  Akwizycję danych przez kartę DAQ lub oscyloskop.
+3.  Przetwarzanie danych i wizualizację charakterystyki amplitudowo-częstotliwościowej w czasie rzeczywistym.
+
+## 🗂️ Struktura Repozytorium
+* `/KiCad` - Pliki projektu PCB (schemat, layout, biblioteki).
+* `/LabVIEW` - Pliki źródłowe programu pomiarowego (.vi).
+* `/Documentation` - Dokumentacja techniczna i obliczenia filtrów.
+
+---
+*Projekt zrealizowany na Politechnice Rzeszowskiej (Katedra Metrologii i Systemów Diagnostycznych).*
 
 <img width="945" height="292" alt="image" src="https://github.com/user-attachments/assets/316ca8f9-eb68-4fde-949f-09c96520dae3" />
 
