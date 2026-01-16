@@ -22,12 +22,9 @@ Wybór konkretnej charakterystyki odbywa się poprzez przepięcie zworki na sele
 ### 2. Sekcja Filtrów Górnoprzepustowych (High-Pass)
 Sekcja ta służy do tłumienia składowych o niskich częstotliwościach i przepuszczania sygnałów powyżej częstotliwości odcięcia ($f_c$). Zastosowano topologię Sallen-Key 2. rzędu, co pozwala na demonstrację wpływu dobroci ($Q$) na kształt "kolana" charakterystyki:
 
-* **$Q = 0.5$ (Bessel ):** * Charakteryzuje się bardzo łagodnym wejściem w pasmo przepustowe.
-    * Brak przeregulowań w odpowiedzi jednostkowej – idealny do analizy szybkich stanów nieustalonych.
-* **$Q = 0.707$ (Butterworth):** * Najbardziej płaska charakterystyka w paśmie przepustowym (Flat-Response).
-    * Sygnał powyżej $f_c$ nie posiada pofalowań, co czyni go najbardziej przewidywalnym w pomiarach laboratoryjnych.
-* **$Q = 2.0$ (Czebyszew):** * Posiada wyraźne podbicie (peak) w okolicy częstotliwości odcięcia.
-    * Zapewnia najszybszy wzrost tłumienia dla sygnałów poniżej $f_c$, ale wprowadza zniekształcenia fazowe i amplitudowe w pobliżu punktu pracy.
+* **$Q = 0.5$ (Bessel ):** 
+* **$Q = 0.707$ (Butterworth):**
+* **$Q = 2.0$ (Czebyszew):** 
     * 
 <img width="900" height="798" alt="image" src="https://github.com/user-attachments/assets/3ded94e1-a627-43d8-a1bc-855a529c00fa" />
 
