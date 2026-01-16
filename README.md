@@ -34,7 +34,7 @@ Wszystkie filtry oparte są na wzmacniaczu **OP07**, a różne typy odpowiedzi u
 * Rezystory ustalające dobroć (np. $R_{13} = 22k\Omega$, $R_{14} = 11k\Omega$).
 ### 3. Sekcja Zasilania (Power Supply)
 Układ posiada zaawansowany blok zasilania, który umożliwia pracę z sygnałem zmiennym dzięki zasilaniu symetrycznemu:
-* **Przetwornica DC-DC:** Użycie modułu **MGJ2D051515SC** pozwala na uzyskanie izolowanego napięcia symetrycznego $\pm 5V$ (lub $\pm 15V$ zależnie od wersji) z pojedynczego wejścia 5V.
+* **Przetwornica DC-DC:** Użycie modułu **MGJ2D051515SC** pozwala na uzyskanie izolowanego napięcia symetrycznego $\pm 5V$  z pojedynczego wejścia DC.
 * **Filtrowanie LC:** Zastosowanie dławika $L_1$ oraz kondensatorów $C_3$, $C_4$ minimalizuje tętnienia napięcia z przetwornicy impulsowej.
 * **Zabezpieczenia:** Dioda chroniąca przed odwrotną polaryzacją oraz diody LED sygnalizujące obecność napięcia na szynach dodatniej i ujemnej.
 * 
